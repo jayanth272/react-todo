@@ -1,13 +1,35 @@
 import React , {useState} from 'react';
-import logo from './logo.svg';
+import Header from './components/Header';
+import {Task} from './models/task.model'
 import './App.css';
+import { Col, Container, Row } from 'react-bootstrap';
+import TasksList from './components/TasksList';
+
+
+
 
 function App() {
-  const [tasks, setTasks] = useState();
+  const [tasks, setTasks] = useState< Task[] >([{
+    id:( new Date).toString(),
+    title : "Meetings",
+    text : "Standup at 11:00",
+    color: "light-grey",
+    date : (new Date).toString()
+  }]
+
+  );
+
   return (
-    <div className="App">
-      App
-    </div>
+    <>
+    <Header/>
+    <Container className="mt-5">
+      <Row>
+        <Col>
+          <TasksList tasks ={tasks} setTasks = {setTasks}/>
+        </Col>
+      </Row>
+    </Container>
+    </>
   );
 }
 
