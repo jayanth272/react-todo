@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Header from './components/Header';
-import NotesList from './components/TasksList';
+import TasksList from './components/TasksList';
 import { Task } from './models/task.model';
 import './App.css';
 import { Col, Container, Row } from 'react-bootstrap';
@@ -16,7 +16,7 @@ function App() {
       <Container className="mt-5">
         <Row>
           <Col>
-            <NotesList tasks={tasks} setTasks={ setTasks}/>
+            <TasksList tasks={tasks} setTasks={ setTasks}/>
           </Col>
         </Row>
         <Row>

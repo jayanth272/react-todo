@@ -3,12 +3,12 @@ import { Card } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import { Task } from '../models/task.model';
 
-interface INotesProps {
+interface ITasksProps {
     task: Task,
     handleDelete: (id: string) => void
 }
 
-const Notes: React.FC<INotesProps> = ({task, handleDelete}) => {
+const Tasks: React.FC<ITasksProps> = ({task, handleDelete}) => {
     return (
         <div className="mb-3">
             <Card style={{backgroundColor: task.color}}>
@@ -23,4 +23,4 @@ const Notes: React.FC<INotesProps> = ({task, handleDelete}) => {
   );
 };
 
-export default Notes;
+export default Tasks;
